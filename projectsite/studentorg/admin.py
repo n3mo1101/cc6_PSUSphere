@@ -7,3 +7,5 @@ admin.site.register(Program)
 admin.site.register(Organization)
 admin.site.register(Student)
 admin.site.register(OrgMember)
+
+# TODO refactor admin.py
