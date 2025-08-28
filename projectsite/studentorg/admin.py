@@ -3,11 +3,31 @@ from .models import College, Program, Organization, Student, OrgMember
 
 # Register your models here.
 admin.site.register(College)
-admin.site.register(Program)
-admin.site.register(Organization)
 
 
-# admin.site.register(Student)
+
+@admin.register(Program)
+class ProgramAdmin(admin.ModelAdmin):
+    list_display = ("prog_name", "college")
+    search_fields = ("prog_name", "college",)
+    list_filter = ["college"]
+
+
+
+@admin.register(Organization)
+class OrganizationAdmin(admin.ModelAdmin):
+    list_display = ("name", "get_org_college", "description")
+    search_fields = ("name", "description",)
+    list_filter = ["college"]
+
+    def get_org_college(self, obj):
+        try:
+            org = Organization.objects.get(id=obj.id)
+            return org.college
+        except Organization.DoesNotExist:
+            return None
+
+
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ("student_id", "lastname",
@@ -15,7 +35,6 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields = ("lastname", "firstname",)
 
 
-# admin.site.register(OrgMember)
 @admin.register(OrgMember)
 class OrgMemberAdmin(admin.ModelAdmin):
     list_display = ("student", "get_member_program", "organization",
