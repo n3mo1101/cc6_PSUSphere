@@ -9,19 +9,39 @@ class CollegeAdmin(admin.ModelAdmin):
     search_fields = ("college_name",)
     list_filter = ("created_at",)
 
-admin.site.register(Program)
-admin.site.register(Organization)
+@admin.register(Program)
+class ProgramAdmin(admin.ModelAdmin):
+    list_display = ("prog_name", "college")
+    search_fields = ("prog_name", "college",)
+    list_filter = ["college"]
+
+
+@admin.register(Organization)
+class OrganizationAdmin(admin.ModelAdmin):
+    list_display = ("name", "get_org_college", "description")
+    search_fields = ("name", "description",)
+    list_filter = ["college"]
+
+    def get_org_college(self, obj):
+        try:
+            org = Organization.objects.get(id=obj.id)
+            return org.college
+        except Organization.DoesNotExist:
+            return None
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ("student_id", "lastname", "firstname", "middlename", "program")
+    list_display = ("student_id", "lastname",
+                    "firstname", "middlename", "program")
     search_fields = ("lastname", "firstname",)
+
 
 @admin.register(OrgMember)
 class OrgMemberAdmin(admin.ModelAdmin):
-    list_display = ("student", "get_member_program", "organization", "date_joined",)
+    list_display = ("student", "get_member_program", "organization",
+                    "date_joined",)
     search_fields = ("student__lastname", "student__firstname",)
-
+    
     def get_member_program(self, obj):
         try:
             member = Student.objects.get(id=obj.student_id)

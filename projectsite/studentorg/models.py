@@ -10,14 +10,14 @@ class BaseModel(models.Model):
 
 
 class College(BaseModel):
-    college_name = models.CharField(max_length=150)
+    college_name = models.CharField("College", max_length=150)
 
     def __str__(self):
         return self.college_name
 
 
 class Program(BaseModel):
-    prog_name = models.CharField(max_length=150)
+    prog_name = models.CharField("Program", max_length=150)
     college = models.ForeignKey(College, on_delete=models.CASCADE)
 
     def __str__(self):
