@@ -33,7 +33,7 @@ The system provides a **centralized database** for managing student memberships,
     <td><pre>
   <b>Name</b>: Reymart Dela Cruz 
   <b>Email</b>: 202380019@psu.palawan.edu.ph 
-      <a href="https://facebook.com/"><img src="img/facebook.png" width="25" /></a> <a href="https://github.com/n3mo1101"><img src="img/github.png" width="25" /></a>
+  <a href="https://facebook.com/"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/Color/Facebook.png" width="25"/></a> <a href="https://github.com/n3mo1101"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/Color/Github.png" width="25"></a>
     </pre></td>
   </tr>
 </table>
@@ -44,7 +44,7 @@ The system provides a **centralized database** for managing student memberships,
     <td><pre>
   <b>Name</b>: John Brence Condesa
   <b>Email</b>: 202380030@psu.palawan.edu.ph
-      <a href="https://facebook.com/" style="text-decoration=none;"><img src="img/facebook.png" width="25" /></a> <a href="https://github.com/Bitr3e"><img src="img/github.png" width="25"></a>
+  <a href="https://facebook.com/"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/Color/Facebook.png" width="25" /></a> <a href="https://github.com/Bitr3e"><img src="https://github.com/gauravghongde/social-icons/blob/master/PNG/Color/Github.png" width="25"></a>
     </pre></td>
   </tr>
 </table>

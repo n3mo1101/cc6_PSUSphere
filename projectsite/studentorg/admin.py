@@ -12,8 +12,8 @@ class CollegeAdmin(admin.ModelAdmin):
 
 @admin.register(Program)
 class ProgramAdmin(admin.ModelAdmin):
-    list_display = ("prog_name", "college")
-    search_fields = ("prog_name", "college",)
+    list_display = ("prog_name", "college__college_name")
+    search_fields = ("prog_name", "college__college_name",)
     list_filter = ["college"]
 
 
