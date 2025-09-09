@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Organization, OrgMember, Student, College
+from .models import Organization, OrgMember, Student, College, Program
 
 
 class OrganizationForm(ModelForm):
@@ -32,3 +32,9 @@ class CollegeForm(ModelForm):
             'created_at': forms.DateInput(attrs={'type': 'date'}),
             'updated_at': forms.DateInput(attrs={'type': 'date'}),
         }
+
+
+class ProgramForm(ModelForm):
+    class Meta:
+        model = Program
+        fields = "__all__"  

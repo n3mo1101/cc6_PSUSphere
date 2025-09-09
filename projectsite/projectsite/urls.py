@@ -24,6 +24,7 @@ from studentorg.views import (
     OrgMemberList, OrgMemberCreateView, OrgMemberUpdateView, OrgMemberDeleteView,
     StudentList, StudentCreateView, StudentUpdateView, StudentDeleteView,
     CollegeList, CollegeCreateView, CollegeUpdateView, CollegeDeleteView,
+    ProgramList, ProgramCreateView, ProgramUpdateView, ProgramDeleteView
 )
 
 
@@ -46,4 +47,8 @@ urlpatterns = [
     path('college_list/add', CollegeCreateView.as_view(), name='college-add'),
     path('college_list/<pk>', CollegeUpdateView.as_view(), name='college-update'),
     path('college_list/<pk>/delete', CollegeDeleteView.as_view(), name='college-delete'),
+    path('program_list', ProgramList.as_view(), name='program-list'),
+    path('program_list/add', ProgramCreateView.as_view(), name='program-add'),
+    path('program_list/<pk>', ProgramUpdateView.as_view(), name='program-update'),
+    path('program_list/<pk>/delete', ProgramDeleteView.as_view(), name='program-delete'),
 ]
