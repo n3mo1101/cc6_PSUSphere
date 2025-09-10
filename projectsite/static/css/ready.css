@@ -54,6 +54,8 @@ body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, 
 body {
   font-size: 14px;
   color: #575962;
+  margin: 0;           /* remove default browser margin */
+  padding: 0;          /* remove padding */
 }
 
 h1, .h1 {
@@ -2041,6 +2043,8 @@ body {
   width: 100%;
   background: #ffffff;
   position: fixed;
+  top: 0;
+  left:  0;
   z-index: 1001;
   border-bottom: 1px solid #eee;
 }

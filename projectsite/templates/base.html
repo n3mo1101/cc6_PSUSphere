@@ -104,13 +104,13 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{% static 'img/profile.jpg' %}" alt="user-img" width="36" class="img-circle"> <span>Username</span></span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{% static 'img/cat_profile.jpg' %}" alt="user-img" width="36" class="img-circle"> <span>cat</span></span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="{% static 'img/profile.jpg' %}" alt="user"></div>
+										<div class="u-img"><img src="{% static 'img/cat_profile.jpg' %}" alt="user"></div>
 										<div class="u-text">
-											<h4>Username</h4>
+											<h4>cat</h4>
 											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
 										</div>
 									</li>
@@ -133,12 +133,12 @@
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
 						<div class="photo">
-							<img src="{% static 'img/profile.jpg' %}">
+							<img src="{% static 'img/cat_profile.jpg' %}">
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Username
+									cat
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -168,12 +168,12 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="index.html">
+							<a href="{% url 'home' %}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 								<span class="badge badge-danger">25</span>
 							</a>
-						</li>
+						</li>12
 						<li class="nav-item">
 							<a href="{% url 'organization-list' %}">
 								<i class="la la-bar-chart"></i>
