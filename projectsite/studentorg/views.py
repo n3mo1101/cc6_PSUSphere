@@ -17,6 +17,8 @@ class HomePageView(ListView):
 
         context = super().get_context_data(**kwargs)
         context["total_students"] = Student.objects.count()
+        context["total_organizations"] = Student.objects.count()
+        context["total_programs"] = Student.objects.count()
 
         today = timezone.now().date()
         count = (
