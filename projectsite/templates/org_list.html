@@ -12,13 +12,14 @@
                     <br />
                     <div class="col-md-12 row">
                         <div class="col-md-6">
-                           <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'organization-list'%}">
+                            <form class="navbar-left navbar-form nav-search mr-md-3"
+                                action="{% url 'organization-list'%}">
                                 <div class="input-group">
                                     <input type="text" placeholder="Search ..." class="form-control" name="q" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text">
+                                        <button class="btn btn-round input-group-text" type="submit">
                                             <i class="la la-search search-icon"></i>
-                                        </span>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -48,10 +49,11 @@
                                     <td>{{ object.description }}</td>
                                     <td>
                                         <a href="organization_list/{{ object.id }}">Edit</a>
-                                        <a href="organization_list/{{ object.id }}/delete" class="text-danger">Delete</a>
+                                        <a href="organization_list/{{ object.id }}/delete"
+                                            class="text-danger">Delete</a>
                                     </td>
                                 </tr>
-                                    {% empty %}
+                                {% empty %}
                                 <tr>
                                     <td colspan="4" style="text-align: center">
                                         <p class="text-sm font-weight-bold mb-0">No Records Found</p>
