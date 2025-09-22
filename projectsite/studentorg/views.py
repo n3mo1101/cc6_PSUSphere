@@ -6,9 +6,10 @@ from studentorg.forms import OrganizationForm, OrgMemberForm, StudentForm, Colle
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils import timezone
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class HomePageView(ListView):
+class HomePageView(LoginRequiredMixin, ListView):
     model = Organization
     context_object_name = "home"
     template_name = "home.html"
@@ -35,7 +36,7 @@ class HomePageView(ListView):
 
 
 # Organization Views
-class OrganizationList(ListView):
+class OrganizationList(LoginRequiredMixin, ListView):
     model = Organization
     context_object_name = "organization"
     template_name = "org_list.html"
@@ -75,7 +76,7 @@ class OrganizationDeleteView(DeleteView):
 
 
 # Org. Members Views
-class OrgMemberList(ListView):
+class OrgMemberList(LoginRequiredMixin, ListView):
     model = OrgMember
     context_object_name = 'org_member'
     template_name = 'org_member_list.html'
@@ -122,7 +123,7 @@ class OrgMemberDeleteView(DeleteView):
 
 
 # Student Views
-class StudentList(ListView):
+class StudentList(LoginRequiredMixin, ListView):
     model = Student
     context_object_name = "student"
     template_name = "student_list.html"
@@ -161,7 +162,7 @@ class StudentDeleteView(DeleteView):
 
 
 # College Views
-class CollegeList(ListView):
+class CollegeList(LoginRequiredMixin, ListView):
     model = College
     context_object_name = "college"
     template_name = "college_list.html"
@@ -197,7 +198,7 @@ class CollegeDeleteView(DeleteView):
 
 
 # Program Views
-class ProgramList(ListView):
+class ProgramList(LoginRequiredMixin, ListView):
     model = Program
     context_object_name = "Program"
     template_name = "program_list.html"
