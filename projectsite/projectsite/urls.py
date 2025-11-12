@@ -31,23 +31,36 @@ from studentorg.views import (
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")), # allauth routes
+    path('api/', include('api.urls')),  # <-- includes all API routes
+
+    # Home page route
     path('', views.HomePageView.as_view(), name='home'),
+
+    # Organization CRUD routes
     path('organization_list', OrganizationList.as_view(), name='organization-list'),
     path('organization_list/add', OrganizationCreateView.as_view(), name='organization-add'),
     path('organization_list/<pk>',OrganizationUpdateView.as_view(), name='organization-update'),
     path('organization_list/<pk>/delete', OrganizationDeleteView.as_view(), name='organization-delete'),
+
+    # Organization Member CRUD routes
     path('organization_member_list', OrgMemberList.as_view(), name='org-member-list'),
     path('organization_member_list/add', OrgMemberCreateView.as_view(), name='org-member-add'),
     path('organization_member_list/<pk>', OrgMemberUpdateView.as_view(), name='org-member-update'),
     path('organization_member_list/<pk>/delete', OrgMemberDeleteView.as_view(), name='org-member-delete'),
+
+    # Student CRUD routes
     path('student_list', StudentList.as_view(), name='student-list'),
     path('student_list/add', StudentCreateView.as_view(), name='student-add'),
     path('student_list/<pk>', StudentUpdateView.as_view(), name='student-update'),
     path('student_list/<pk>/delete', StudentDeleteView.as_view(), name='student-delete'),
+
+    # College CRUD routes
     path('college_list', CollegeList.as_view(), name='college-list'),
     path('college_list/add', CollegeCreateView.as_view(), name='college-add'),
     path('college_list/<pk>', CollegeUpdateView.as_view(), name='college-update'),
     path('college_list/<pk>/delete', CollegeDeleteView.as_view(), name='college-delete'),
+
+    # Program CRUD routes
     path('program_list', ProgramList.as_view(), name='program-list'),
     path('program_list/add', ProgramCreateView.as_view(), name='program-add'),
     path('program_list/<pk>', ProgramUpdateView.as_view(), name='program-update'),

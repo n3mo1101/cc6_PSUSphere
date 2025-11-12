@@ -13,9 +13,9 @@ class OrgMemberForm(ModelForm):
     class Meta:
         model = OrgMember
         fields = "__all__"
-        widgets = {
-            'date_joined': forms.DateInput(attrs={'type': 'date'}),
-        }
+        # widgets = {
+        #     'deadline': forms.DateTimeInput(attrs={'type': 'date'}),
+        # }
 
 
 class StudentForm(ModelForm):
